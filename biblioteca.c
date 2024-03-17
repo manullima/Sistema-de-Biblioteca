@@ -64,9 +64,9 @@ No *novo = malloc(sizeof(No));
         novo->usuario = usuario;
         novo->proximoUsuario = lista->inicioUsuario;
         lista->inicioUsuario = novo;
-        printf("\nUsu·rio inserido com sucesso!\n");
+        printf("\nUsu√°rio inserido com sucesso!\n");
      }else{
-        printf("\nErro ao alocar memÛria.\n");
+        printf("\nErro ao alocar mem√≥ria.\n");
     }
 }
 //funcao para excluir usuario
@@ -87,18 +87,18 @@ No *atual = lista->inicioUsuario, *anterior = NULL;
             anterior->proximoUsuario = atual->proximoUsuario;
         }
         free(atual);
-        printf("\nUsu·rio com ID %d excluÌdo com sucesso!\n", identificador);
+        printf("\nUsu√°rio com ID %d exclu√≠do com sucesso!\n", identificador);
         }
         else
         {
-        printf("\nUsu·rio com ID %d n„o encontrado.\n", identificador);
+        printf("\nUsu√°rio com ID %d n√£o encontrado.\n", identificador);
         }
 }
 //relatorio das informacoes do usuario
 void exibirInformacoesUsuario(Usuario *usuario){
-    printf("\n\tInformaÁıes do Usu·rio com ID %d: ", usuario->identificador);
+    printf("\n\tInforma√ß√µes do Usu√°rio com ID %d: ", usuario->identificador);
     printf("\n\tNome: %s", usuario->nome);
-    printf("\tEndereÁo: %s", usuario->endereco);
+    printf("\tEndere√ßo: %s", usuario->endereco);
     printf("\tTelefone: %lld\n", usuario->telefone);
 }
 
@@ -113,9 +113,9 @@ No *atual = lista->inicioUsuario;
             do{
                 exibirInformacoesUsuario(&atual->usuario);
 
-                printf("\n\tOpÁıes para alteraÁ„o:");
+                printf("\n\tOp√ß√µes para altera√ß√£o:");
                 printf("\n\t1 - Nome");
-                printf("\n\t2 - EndereÁo");
+                printf("\n\t2 - Endere√ßo");
                 printf("\n\t3 - Telefone");
                 printf("\n\t0 - Sair");
 
@@ -129,7 +129,7 @@ No *atual = lista->inicioUsuario;
                 fgets(atual->usuario.nome, 100, stdin);
                 break;
         case 2:
-                printf("Digite um novo endereÁo: ");
+                printf("Digite um novo endere√ßo: ");
                 fgets(atual->usuario.endereco, 100, stdin);
                 break;
         case 3:
@@ -139,12 +139,12 @@ No *atual = lista->inicioUsuario;
         case 0:
                 break;
         default:
-                printf("\nOpÁ„o inv·lida.\n");
+                printf("\nOp√ß√£o inv√°lida.\n");
                 break;
 }
 }while(op != 0);
 
-            printf("\nInformaÁıes alteradas com sucesso!\n");
+            printf("\nInforma√ß√µes alteradas com sucesso!\n");
             return;
         }
         else
@@ -152,17 +152,17 @@ No *atual = lista->inicioUsuario;
         atual = atual->proximoUsuario;
         }
     }
-    printf("\nUsu·rio com ID %d n„o encontrado.\n", identificador);
+    printf("\nUsu√°rio com ID %d n√£o encontrado.\n", identificador);
 }
 //funcao para imprimir informacoes do usuario
 void imprimirListaUsuario(Lista lista){
 No *no = lista.inicioUsuario;
 
-    printf("\n\tLista de usu·rios: \n");
+    printf("\n\tLista de usu√°rios: \n");
     while(no){ //diferente de null
         printf("\n\tID: %d", no->usuario.identificador);
         printf("\n\tNOME: %s", no->usuario.nome);
-        printf("\tENDERE«O: %s", no->usuario.endereco);
+        printf("\tENDERE√áO: %s", no->usuario.endereco);
         printf("\tTELEFONE: %lld\n", no->usuario.telefone);
         no = no->proximoUsuario; //vai para o proximo no da lista
     }
@@ -180,22 +180,22 @@ No *novo = malloc(sizeof(No));
     printf("\nLivro %d inserido com sucesso!\n", livro.identificador);
 }   else
     {
-    printf("\nErro ao alocar memÛria.\n");
+    printf("\nErro ao alocar mem√≥ria.\n");
     }
 
 }
 //relatorio das informacoes do livro
 void exibirInformacoesLivro(Livro *livro){
-    printf("\n\tInformaÁıes do Livro com ID %d: ", livro->identificador);
-    printf("\n\tTÌtulo: %s", livro->titulo);
+    printf("\n\tInforma√ß√µes do Livro com ID %d: ", livro->identificador);
+    printf("\n\tT√≠tulo: %s", livro->titulo);
 
     printf("\tAutores: \n");
     for(int i = 0; i < livro->numAutores; i++){
     printf("\t %d - %s", i+1, livro->autores[i].nome);
-    printf("\t InstituiÁ„o: %s", livro->autores[i].instituicao);
+    printf("\t Institui√ß√£o: %s", livro->autores[i].instituicao);
     }
     printf("\tAno: %d", livro->ano);
-    printf("\n\tEdiÁ„o: %d", livro->edicao);
+    printf("\n\tEdi√ß√£o: %d", livro->edicao);
     printf("\n\tEditora: %s\n", livro->editora);
 }
 //funcao para alterar informacoes do livro
@@ -208,11 +208,11 @@ void alterarLivro(Lista *lista, int idLivro){
             do{
                 exibirInformacoesLivro(&atual->livro);
 
-                printf("\n\tOpÁıes para alteraÁ„o:");
-                printf("\n\t1 - TÌtulo");
+                printf("\n\tOp√ß√µes para altera√ß√£o:");
+                printf("\n\t1 - T√≠tulo");
                 printf("\n\t2 - Autor");
                 printf("\n\t3 - Ano");
-                printf("\n\t4 - EdiÁ„o");
+                printf("\n\t4 - Edi√ß√£o");
                 printf("\n\t5 - Editora");
                 printf("\n\t0 - Sair");
 
@@ -222,7 +222,7 @@ void alterarLivro(Lista *lista, int idLivro){
 
                 switch(op){
                 case 1:
-                    printf("\nDigite um novo tÌtulo: ");
+                    printf("\nDigite um novo t√≠tulo: ");
                     fgets(atual->livro.titulo,100, stdin);
 
                     break;
@@ -232,7 +232,7 @@ void alterarLivro(Lista *lista, int idLivro){
                     fgets(atual->livro.autores[i].nome, 100, stdin );
                     atual->livro.autores[i].nome[strcspn(atual->livro.autores[i].nome, "\n")] = '\0';
 
-                    printf("\nDigite uma nova instituiÁ„o: ");
+                    printf("\nDigite uma nova institui√ß√£o: ");
                     fgets(atual->livro.autores[i].instituicao, 100, stdin);
                     }
                     break;
@@ -241,7 +241,7 @@ void alterarLivro(Lista *lista, int idLivro){
                     scanf("%d", &atual->livro.ano);
                     break;
                 case 4:
-                    printf("\nDigite uma nova ediÁ„o: ");
+                    printf("\nDigite uma nova edi√ß√£o: ");
                     scanf("%d", &atual->livro.edicao);
                     break;
                 case 5:
@@ -251,12 +251,12 @@ void alterarLivro(Lista *lista, int idLivro){
                 case 0:
                     break;
                 default:
-                    printf("\nOpÁ„o inv·lida.\n");
+                    printf("\nOp√ß√£o inv√°lida.\n");
                     break;
 }
 }while(op != 0);
 
-        printf("\nInformaÁıes alteradas com sucesso!\n");
+        printf("\nInforma√ß√µes alteradas com sucesso!\n");
         return;
         }
         else
@@ -264,7 +264,7 @@ void alterarLivro(Lista *lista, int idLivro){
             atual = atual->proximoLivro;
         }
     }
-    printf("\nUsu·rio com ID %d n„o encontrado.\n", idLivro);
+    printf("\nUsu√°rio com ID %d n√£o encontrado.\n", idLivro);
 }
 //funcao para excluir informacoes do livro
 void excluirLivro(Lista *lista, int identificador){
@@ -284,11 +284,11 @@ No *atual = lista->inicioLivro, *anterior = NULL;
             anterior->proximoLivro = atual->proximoLivro;
         }
         free(atual);
-        printf("\nLivro com ID %d excluÌdo com sucesso!\n", identificador);
+        printf("\nLivro com ID %d exclu√≠do com sucesso!\n", identificador);
     }
         else
     {
-        printf("\nLivro com ID %d n„o encontrado.\n", identificador);
+        printf("\nLivro com ID %d n√£o encontrado.\n", identificador);
     }
 }
 //funcao para imprimir informacoes do livro
@@ -298,9 +298,9 @@ No *no = lista.inicioLivro;
     printf("\n\tLista de livros:\n");
     while(no){ //diferente de null
         printf("\n\tID: %d", no->livro.identificador);
-        printf("\n\tTÌtulo: %s", no->livro.titulo);
+        printf("\n\tT√≠tulo: %s", no->livro.titulo);
         printf("\tAno: %d", no->livro.ano);
-        printf("\n\tEdiÁ„o: %d", no->livro.edicao);
+        printf("\n\tEdi√ß√£o: %d", no->livro.edicao);
         printf("\n\tEditora: %s", no->livro.editora);
 
         printf("\tAutores:\n");
@@ -343,15 +343,15 @@ No *atual = lista->inicioReserva, *anterior = NULL;
             anterior->proximoReserva = atual->proximoReserva;
         }
         free(atual);
-        printf("\nReserva do usu·rio com ID %d excluÌda com sucesso!\n", idUsuario);
+        printf("\nReserva do usu√°rio com ID %d exclu√≠da com sucesso!\n", idUsuario);
     } else {
-        printf("\nReserva do usu·rio com ID %d n„o encontrada.\n", idUsuario);
+        printf("\nReserva do usu√°rio com ID %d n√£o encontrada.\n", idUsuario);
     }
 }
 //funcao para exibir informacoes da reserva
 void exibirReserva(Reserva *reserva){
-    printf("\n\tInformaÁıes da Reserva com id %d: \n", reserva->idUsuario);
-    printf("\n\tData de inÌcio: %d / %d / %d", reserva->dataInicio.dia, reserva->dataInicio.mes, reserva->dataInicio.ano);
+    printf("\n\tInforma√ß√µes da Reserva com id %d: \n", reserva->idUsuario);
+    printf("\n\tData de in√≠cio: %d / %d / %d", reserva->dataInicio.dia, reserva->dataInicio.mes, reserva->dataInicio.ano);
     printf("\n\tData de fim: %d / %d / %d\n", reserva->dataFim.dia, reserva->dataFim.mes, reserva->dataFim.ano);
 }
 //funcao para alterar informacoes da reserva
@@ -365,8 +365,8 @@ No *atual = lista->inicioReserva;
             do{
                 exibirReserva(&atual->reserva);
 
-                printf("\n\tOpÁıes para alteracao:");
-                printf("\n\t1 - Data de inÌcio");
+                printf("\n\tOp√ß√µes para alteracao:");
+                printf("\n\t1 - Data de in√≠cio");
                 printf("\n\t2 - Data de fim");
                 printf("\n\t0 - Sair");
 
@@ -375,7 +375,7 @@ No *atual = lista->inicioReserva;
 
                 switch(op){
                 case 1:
-                    printf("Digite um nova data de inÌcio(dd/mm/aaaa): ");
+                    printf("Digite um nova data de in√≠cio(dd/mm/aaaa): ");
                     scanf("%d%d%d", &atual->reserva.dataInicio.dia, &atual->reserva.dataInicio.mes, &atual->reserva.dataInicio.ano);
                     break;
                 case 2:
@@ -386,19 +386,19 @@ No *atual = lista->inicioReserva;
                     break;
 
                 default:
-                    printf("\nOpc„o inv·lida.\n");
+                    printf("\nOpc√£o inv√°lida.\n");
                     break;
                 }
 
             }while(op != 0);
 
-            printf("\nInformaÁıes alteradas com sucesso!\n");
+            printf("\nInforma√ß√µes alteradas com sucesso!\n");
             return;
         }else{
             atual = atual->proximoReserva;
         }
     }
-    printf("\nUsu·rio com ID %d n„o encontrado.\n", idUsuario);
+    printf("\nUsu√°rio com ID %d n√£o encontrado.\n", idUsuario);
 }
 //funcao para imprimir as informacoes da reserva
 void imprimirListaReserva(Lista lista){
@@ -406,9 +406,9 @@ void imprimirListaReserva(Lista lista){
 
     printf("\n\tLista de reservas: ");
     while(no){ //diferente de null
-        printf("\n\t ID do usu·rio: %d\n", no->reserva.idUsuario);
+        printf("\n\t ID do usu√°rio: %d\n", no->reserva.idUsuario);
         printf("\t ID do livro: %d\n", no->reserva.idLivro);
-        printf("\t Data de inÌcio: %d / %d / %d\n", no->reserva.dataInicio.dia, no->reserva.dataInicio.mes, no->reserva.dataInicio.ano);
+        printf("\t Data de in√≠cio: %d / %d / %d\n", no->reserva.dataInicio.dia, no->reserva.dataInicio.mes, no->reserva.dataInicio.ano);
         printf("\t Data de Fim: %d / %d / %d\n", no->reserva.dataFim.dia, no->reserva.dataFim.mes, no->reserva.dataFim.ano);
 
         no = no->proximoReserva; //vai para o proximo no da lista
@@ -454,29 +454,29 @@ void excluirAutorLivro(Lista *lista, int idLivro) {
             }
 
             int opcao;
-                printf("Digite o n˙mero do autor que deseja excluir (0 para ir): ");
+                printf("Digite o n√∫mero do autor que deseja excluir (0 para ir): ");
                 scanf("%d", &opcao);
 
             if (opcao >= 1 && opcao <= numAutores) {
-                // Deslocar os autores para preencher a posiÁ„o excluÌda
+                // Deslocar os autores para preencher a posi√ß√£o exclu√≠da
             for (int i = opcao - 1; i < numAutores - 1; i++) {
                 strcpy(atual->livro.autores[i].nome, atual->livro.autores[i + 1].nome);
                 strcpy(atual->livro.autores[i].instituicao, atual->livro.autores[i + 1].instituicao);
                 }
 
-                // Atualizar o n˙mero de autores
+                // Atualizar o n√∫mero de autores
                 atual->livro.numAutores--;
 
-                printf("Autor excluÌdo com sucesso!\n");
+                printf("Autor exclu√≠do com sucesso!\n");
             } else if (opcao != 0) {
-                printf("OpÁ„o inv·lida!\n");
+                printf("Op√ß√£o inv√°lida!\n");
             }
     return;
         } else {
             atual = atual->proximoLivro;
         }
     }
-    printf("Livro com ID %d n„o encontrado.\n", idLivro);
+    printf("Livro com ID %d n√£o encontrado.\n", idLivro);
 }
 
 int main(){
@@ -491,11 +491,11 @@ int main(){
     int opcao, op1, op2, op3, op4, id;
 
     do{
-            printf("Escolha uma opÁ„o: \n");
-            printf("1 - Usu·rio\n");
+            printf("Escolha uma op√ß√£o: \n");
+            printf("1 - Usu√°rio\n");
             printf("2 - Livro\n");
             printf("3 - Reserva\n");
-            printf("4 - RelatÛrios\n");
+            printf("4 - Relat√≥rios\n");
             printf("5 - Sair\n");
 
             scanf("%d", &opcao);
@@ -504,21 +504,21 @@ int main(){
     switch(opcao){
     case 1: //usuario
         do{
-            printf("1 - Incluir usu·rio\n");
-            printf("2 - Excluir usu·rio\n");
-            printf("3 - Alterar informaÁ„o do usu·rio\n");
+            printf("1 - Incluir usu√°rio\n");
+            printf("2 - Excluir usu√°rio\n");
+            printf("3 - Alterar informa√ß√£o do usu√°rio\n");
             printf("0 - Sair\n");
 
             scanf("%d", &op1);
 
         switch(op1){
         case 1: //incluir usuario
-            printf("Digite o ID do Usu·rio: \n");
+            printf("Digite o ID do Usu√°rio: \n");
             scanf("%d", &usuario.identificador);
             getchar();
             printf("Digite o nome: \n");
             fgets(usuario.nome, 100, stdin);
-            printf("Digite o endereÁo: \n");
+            printf("Digite o endere√ßo: \n");
             fgets(usuario.endereco, 100, stdin);
             printf("Digite o telefone: \n");
             scanf("%lld", &usuario.telefone);
@@ -528,14 +528,14 @@ int main(){
             system("cls");
             break;
         case 2: //excluir usuario
-            printf("Digite o ID do usu·rio que deseja excluir: ");
+            printf("Digite o ID do usu√°rio que deseja excluir: ");
             scanf("%d", &id);
             excluirUsuario(&lista, id);
             system("pause");
             system("cls");
             break;
         case 3: //alterar usuario
-            printf("Digite o ID do usu·rio que deseja alterar informaÁıes: ");
+            printf("Digite o ID do usu√°rio que deseja alterar informa√ß√µes: ");
             scanf("%d", &id);
             alterarUsuario(&lista, id);
             system("pause");
@@ -551,10 +551,10 @@ break;
 
      case 2: //livro
             do{
-            printf("\nEscolha uma opÁ„o: \n");
+            printf("\nEscolha uma op√ß√£o: \n");
             printf("\n1 - Incluir livro");
             printf("\n2 - Excluir livro");
-            printf("\n3 - Alterar informaÁıes do livro");
+            printf("\n3 - Alterar informa√ß√µes do livro");
             printf("\n4 - Excluir autor do livro");
             printf("\n0 - Sair\n");
 
@@ -567,7 +567,7 @@ break;
             scanf("%d", &livro.identificador);
             getchar();
 
-            printf("\nDigite o tÌtulo do livro:\n");
+            printf("\nDigite o t√≠tulo do livro:\n");
             fgets(livro.titulo, 100, stdin);
 
             printf("\nQuantos autores o livro possui?\n");
@@ -580,13 +580,13 @@ break;
                 fgets(livro.autores[i].nome, 100, stdin);
                 livro.autores[i].nome[strcspn(livro.autores[i].nome, "\n")] = '\0';
 
-                printf("\nDigite a instituiÁ„o do autor %d: \n", i + 1);
+                printf("\nDigite a institui√ß√£o do autor %d: \n", i + 1);
                 fgets(livro.autores[i].instituicao, 100, stdin);
 }
             printf("\nDigite o ano do livro:\n");
             scanf("%d", &livro.ano);
 
-            printf("\nDigite a ediÁ„o do livro:\n");
+            printf("\nDigite a edi√ß√£o do livro:\n");
             scanf("%d", &livro.edicao);
             getchar();
 
@@ -607,7 +607,7 @@ break;
             break;
 
         case 3: //alterar livro
-            printf("\nDigite o ID do livro que deseja alterar as informaÁıes: ");
+            printf("\nDigite o ID do livro que deseja alterar as informa√ß√µes: ");
             scanf("%d", &id);
             alterarLivro(&lista, id);
             system("pause");
@@ -628,7 +628,7 @@ break;
             break;
 
         default:
-            printf("\nOpÁ„o inv·lida.");
+            printf("\nOp√ß√£o inv√°lida.");
             break;
 }
 }
@@ -637,7 +637,7 @@ break;
 
     case 3: //reserva
          do{
-            printf("\n\tEscolha uma opÁ„o:");
+            printf("\n\tEscolha uma op√ß√£o:");
             printf("\n\t1 - Incluir Reserva");
             printf("\n\t2 - Excluir Reserva");
             printf("\n\t3 - Alterar Reserva");
@@ -649,12 +649,12 @@ break;
 
         case 1: //incluir reserva
 
-            printf("Digite o ID do Usu·rio: \n");
+            printf("Digite o ID do Usu√°rio: \n");
             scanf("%d", &reserva.idUsuario);
             getchar();
             printf("Digite o ID do livro: \n");
             scanf("%d", &reserva.idLivro);
-            printf("Digite a data de inÌcio (dd/mm/aaaa): \n");
+            printf("Digite a data de in√≠cio (dd/mm/aaaa): \n");
             scanf("%d%d%d", &reserva.dataInicio.dia, &reserva.dataInicio.mes, &reserva.dataInicio.ano);
             printf("Digite a data de fim (dd/mm/aaaa): \n");
             scanf("%d%d%d", &reserva.dataFim.dia, &reserva.dataFim.mes, &reserva.dataFim.ano);
@@ -665,7 +665,7 @@ break;
             break;
 
         case 2: //excluir reserva
-            printf("Digite o ID do usu·rio da reserva que deseja excluir: ");
+            printf("Digite o ID do usu√°rio da reserva que deseja excluir: ");
             scanf("%d", &id);
             excluirReserva(&lista, id);
             system("pause");
@@ -673,7 +673,7 @@ break;
             break;
 
         case 3: //alterar reserva
-            printf("\nDigite o ID do usu·rio que deseja alterar a reserva: ");
+            printf("\nDigite o ID do usu√°rio que deseja alterar a reserva: ");
             scanf("%d", &id);
             alterarReserva(&lista, id);
             system("pause");
@@ -682,7 +682,7 @@ break;
         case 0: //sair
             break;
         default:
-            printf("\nOpÁ„o inv·lida.");
+            printf("\nOp√ß√£o inv√°lida.");
             break;
 }
 }
@@ -691,8 +691,8 @@ break;
 
     case 4: //exibir informacoes
          do{
-            printf("\n\tEscolha uma opÁ„o:");
-            printf("\n\t1 - Lista de Usu·rios");
+            printf("\n\tEscolha uma op√ß√£o:");
+            printf("\n\t1 - Lista de Usu√°rios");
             printf("\n\t2 - Lista de Livros");
             printf("\n\t3 - Lista de Reservas");
             printf("\n\t0 - Sair\n");
@@ -719,7 +719,7 @@ break;
         case 0: //sair
             break;
         default:
-            printf("\nOpÁ„o inv·lida.");
+            printf("\nOp√ß√£o inv√°lida.");
             break;
             }
 
@@ -731,7 +731,7 @@ break;
     break;
 
     default:
-    printf("\nOpÁ„o inv·lida.");
+    printf("\nOp√ß√£o inv√°lida.");
 
      }
 }while(opcao != 5);
