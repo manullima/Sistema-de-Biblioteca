@@ -55,7 +55,10 @@ Cada operação (inserção, remoção, alteração e exibição) foi modulariza
 ### Requisitos
 - Compilador C (GCC, Clang etc.)
 
-### Compilação
+### Compilação e Execução
 ```bash
 gcc -o biblioteca main.c
+./biblioteca
+
+
 
