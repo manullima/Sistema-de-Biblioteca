@@ -1,29 +1,61 @@
-📚 Sistema de Gerenciamento de Biblioteca
-Este projeto em linguagem C implementa um sistema de gerenciamento de biblioteca simples baseado em listas encadeadas. O sistema permite cadastrar, alterar, listar e excluir usuários, livros e reservas de forma dinâmica via terminal, utilizando menus interativos.
+# 📚 Sistema de Gerenciamento de Biblioteca em C
 
--Estrutura do Projeto
-Usuários: Cadastro com ID, nome, endereço e telefone.
-Livros: Armazenam ID, título, até 5 autores (com nome e instituição), ano, edição e editora.
-Reservas: Associações entre usuários e livros, com datas de início e fim.
+Este projeto é uma aplicação em linguagem **C** que simula um **sistema de biblioteca**, permitindo o gerenciamento de **usuários**, **livros** e **reservas** utilizando **listas encadeadas**. É uma solução simples, feita para fins educacionais, com interface via **linha de comando (terminal)**.
 
--Funcionalidades Implementadas
-Cadastro de usuários, livros e reservas.
-Alteração de dados de usuários, livros (inclusive autores) e reservas.
-Exclusão de registros (com validação por ID).
-Relatórios listando todos os usuários, livros e reservas cadastrados.
-Gerenciamento de memória dinâmica, evitando vazamentos.
-Interface por menus no terminal, facilitando a navegação.
+## Objetivo
 
--Estruturas de Dados Utilizadas
-Listas encadeadas separadas para:
-Usuários
-Livros
-Reservas
+Desenvolver um sistema que organize e manipule dados de forma eficiente, praticando conceitos como:
 
-Cada tipo possui ponteiros independentes dentro de uma struct principal Lista, otimizando a organização do sistema.
+- Estruturas (`struct`)
+- Listas encadeadas
+- Alocação dinâmica de memória (`malloc` e `free`)
+- Funções modularizadas
+- Entrada e saída formatada de dados
+- Organização de menus interativos
 
--Como Executar?
-Compile o código com:
-        gcc -o biblioteca main.c
-Execute:
-        ./biblioteca
+---
+
+## Funcionalidades
+
+### 👤 Usuários
+- Cadastrar novo usuário
+- Alterar informações (nome, endereço, telefone)
+- Excluir usuário
+- Listar todos os usuários cadastrados
+
+### 📕 Livros
+- Cadastrar livro com até 5 autores
+- Alterar informações (título, autores, ano, edição, editora)
+- Excluir livro
+- Excluir autor específico de um livro
+- Listar todos os livros cadastrados
+
+### 📅 Reservas
+- Criar reserva associando um usuário a um livro com data de início e fim
+- Alterar datas de uma reserva
+- Excluir reserva
+- Listar todas as reservas realizadas
+
+---
+
+## Estrutura do Código
+
+O projeto utiliza uma `struct` principal chamada `Lista`, que armazena três ponteiros para listas encadeadas independentes de:
+
+- `Livro`
+- `Usuario`
+- `Reserva`
+
+Cada operação (inserção, remoção, alteração e exibição) foi modularizada em funções específicas, garantindo **legibilidade** e **manutenção facilitada**.
+
+---
+
+## ⚙️ Como Compilar e Executar
+
+### Requisitos
+- Compilador C (GCC, Clang etc.)
+
+### Compilação
+```bash
+gcc -o biblioteca main.c
+
